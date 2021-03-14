@@ -23,6 +23,13 @@ export default class Mapa {
                         ctx.lineWidth = 1;
                         ctx.strokeStyle - "black";
                         ctx.strokeRect(c*this.SIZE, l*this.SIZE, this.SIZE, this.SIZE);
+                        break;z
+                    case 2:
+                        ctx.fillStyle = "lightgreen";
+                        ctx.fillRect(c*this.SIZE, l*this.SIZE, this.SIZE, this.SIZE);
+                        ctx.lineWidth = 1;
+                        ctx.strokeStyle - "lightblue";
+                        ctx.strokeRect(c*this.SIZE, l*this.SIZE, this.SIZE, this.SIZE);
                         break;
                         default: 
                         ctx.fillStyle = "black";
