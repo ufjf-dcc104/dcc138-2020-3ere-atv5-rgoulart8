@@ -12,24 +12,32 @@ export default class Sprite{
         this.w = w;
         this.h = h;
         this.collor = collor;
+        this.cena = null;
+        this.mx = 0;
+        this.my = 0;
     }
 
     desenhar(ctx)
         {
             ctx.fillStyle = this.collor;
             ctx.fillRect(this.x - this.w/2, this.y - this.h/2, this.w, this.h);
+            
+           
     }
 
     passo(dt){
         this.x = this.x + this.vx*dt
         this.y = this.y + this.vy*dt
+        this.mx = Math.floor(this.x/this.cena.mapa.SIZE);
+        this.my = Math.floor(this.y/this.cena.mapa.SIZE);
+
     }
 
     colidiuCom(outro){
         return !(
             this.x - this.w/2 > outro.x + outro.w/2 ||
             this.x + this.w/2 < outro.x - outro.w/2 ||
-            this.y - this.h/2 > outro.x + outro.h/2 ||
+            this.y - this.h/2 > outro.y + outro.h/2 ||
             this.y + this.h/2 < outro.y - outro.h/2
         );
 
