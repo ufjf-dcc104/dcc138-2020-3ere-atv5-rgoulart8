@@ -30,7 +30,7 @@ export default class AssetManager {
         return "Nada a Carregar";
     }
 
-    acabou()[
+    acabou(){
         return this.carregadas === this.aCarregar;
-    ]
+    }
 }
