@@ -1,5 +1,5 @@
 export default class Mapa {
-    constructor(linhas = 8, colunas = 12, tamanho = 32){
+    constructor(linhas = 20, colunas = 25, tamanho = 32){
         this.LINHAS = linhas;
         this.COLUNAS = colunas;
         this.SIZE = tamanho;

@@ -3,7 +3,7 @@ export default class Sprite{
         É responsável por modelar algo que
         se move na tela 
     */ 
-    constructor({x=100, y=100, w=20, h=20,
+    constructor({x=100, y=100, w=32, h=32,
         collor = "white", vx=0, vy=0}={}){
         this.x = x;
         this.y = y;
@@ -15,6 +15,7 @@ export default class Sprite{
         this.cena = null;
         this.mx = 0;
         this.my = 0;
+        this.assets = null;
     }
 
     desenhar(ctx)
@@ -37,6 +38,7 @@ export default class Sprite{
         this.mx = Math.floor(this.x/this.cena.mapa.SIZE);
         this.my = Math.floor(this.y/this.cena.mapa.SIZE);
         this.aplicaRestricoes(dt);
+        
     }
 
     colidiuCom(outro){
@@ -140,5 +142,6 @@ export default class Sprite{
             }
          }
     }
+
 }
     

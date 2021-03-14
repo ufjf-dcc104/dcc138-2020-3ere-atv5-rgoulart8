@@ -70,7 +70,9 @@ export default class Cena {
             for (let b = a+1; b < this.sprites.length; b++) {
                 const spriteB = this.sprites[b];
                 if (spriteA.colidiuCom(spriteB)){
+
                     this.quandoColidir(spriteA, spriteB);
+                    
                 }
             }    
         }
@@ -82,7 +84,7 @@ export default class Cena {
         if(!this.aRemover.includes(b)){
             this.aRemover.push(b);
         }
-        
+        this.assets.playColidiu("explosao");
         console.log(this.aRemover);
     }
 
@@ -91,7 +93,7 @@ export default class Cena {
             const idx = this.sprites.indexOf(alvo);
             if(idx >= 0) {
                 this.sprites.splice(idx, 1);
-            }        
+                }        
         }
     this.aRemover = [];
     }

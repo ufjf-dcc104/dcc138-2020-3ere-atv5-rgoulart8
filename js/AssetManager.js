@@ -57,4 +57,8 @@ export default class AssetManager {
     play(chave){
         this.mixer?.play(this.audio(chave));
     }
+
+    playColidiu(chave){
+        this.mixer?.play(this.audio(chave));
+    }
 }
