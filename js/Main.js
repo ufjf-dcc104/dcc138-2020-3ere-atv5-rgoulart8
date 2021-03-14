@@ -8,6 +8,7 @@ assets.carregaImagem ("garota", "assets/girl.png");
 assets.carregaImagem ("esqueleto", "assets/skelly.png");
 assets.carregaImagem ("orc", "assets/orc.png");
 assets.carregaAudio ("moeda", "assets/coin.wav");
+assets.carregaAudio ("explosao", "assets/boom.wav");
 
 document.body.appendChild(assets.img("garota"));
 document.body.appendChild(assets.img("esqueleto"));
@@ -35,5 +36,8 @@ document.addEventListener("keydown", (e)=>{
     case "c":
         assets.audio("moeda").play();
         break;
+    case "b":
+            assets.audio("explosao").play();
+            break;
     }
     })
