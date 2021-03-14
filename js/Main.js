@@ -28,7 +28,8 @@ const en1 = new Sprite({x:160, vx: -10, collor:"red"});
 
 cena1.adicionar(pc);
 cena1.adicionar(en1);
-cena1.adicionar(new Sprite({y: 70, collor: "red"}));
+cena1.adicionar(new Sprite({x: 115, y: 70, vy: 10, collor: "red"}));
+cena1.adicionar(new Sprite({x: 115, y: 180, vy: -10, collor: "red"}));
 
 cena1.iniciar();
 
