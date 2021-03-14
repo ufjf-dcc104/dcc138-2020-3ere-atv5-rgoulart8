@@ -49,7 +49,6 @@ export default class Cena {
         this.desenhar();
         this.checaColisao();
         this.removerSprites();
-
         this.iniciar();
         this.t0 = t;
     }

@@ -28,12 +28,18 @@ cena1.configuraMapa(mapa1);
 
 const pc = new Sprite({x: 50, vx:10});
 const en1 = new Sprite({x:200, vx: -10, collor:"red"});
-
-
+    
 cena1.adicionar(pc);
 cena1.adicionar(en1);
-cena1.adicionar(new Sprite({x: 115, y: 70, vy: 10, collor: "red"}));
-cena1.adicionar(new Sprite({x: 115, y: 180, vy: -10, collor: "red"}));
+cena1.adicionar(new Sprite({x: 115, y: 70, vy: 10, collor: "yellow"}));
+cena1.adicionar(new Sprite({x: 650, y: 70, vx: -10, collor: "pink"}));
+cena1.adicionar(new Sprite({x: 150, y: 180, vy: -10, collor: "green"}));
+cena1.adicionar(new Sprite({x: 315, y: 299, vy: +10, collor: "blue"}));
+cena1.adicionar(new Sprite({x: 460, y: 123, vy: -10, collor: "lightblue"}));
+cena1.adicionar(new Sprite({x: 400, y: 212, vy: 10, collor: "orange"}));
+cena1.adicionar(new Sprite({x: 420, y: 512, vy: -10, collor: "purple"}));
+
+
 
 cena1.iniciar();
 

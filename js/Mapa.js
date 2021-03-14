@@ -11,6 +11,7 @@ export default class Mapa {
             }       
         }
         this.cena = null;
+        this.assets = null;
     }
 
     desenhar(ctx){
