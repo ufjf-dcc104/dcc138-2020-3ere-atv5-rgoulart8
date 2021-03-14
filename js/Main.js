@@ -14,12 +14,6 @@ assets.carregaImagem ("orc", "assets/orc.png");
 assets.carregaAudio ("moeda", "assets/coin.wav");
 assets.carregaAudio ("explosao", "assets/boom.wav");
 
-
-
-document.body.appendChild(assets.img("garota"));
-document.body.appendChild(assets.img("esqueleto"));
-document.body.appendChild(assets.img("orc"));
-
 const canvas = document.querySelector("canvas");
 canvas.width = 14*32;
 canvas.height = 10*32;
