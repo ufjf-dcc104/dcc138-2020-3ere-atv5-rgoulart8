@@ -4,17 +4,25 @@ export default class Sprite{
         se move na tela 
     */ 
     constructor({x=100, y=100, w=20, h=20,
-        collor = "white"}={}){
+        collor = "white", vx=0, vy=0}={}){
         this.x = x;
         this.y = y;
+        this.vx = vx;
+        this.vy = vy;
         this.w = w;
         this.h = h;
         this.collor = collor;
     }
+
     desenhar(ctx)
         {
             ctx.fillStyle = this.collor;
             ctx.fillRect(this.x, this.y, this.w, this.h);
+    }
+
+    passo(dt){
+        this.x = this.x + this.vx*dt
+        this.y = this.y + this.vy*dt
     }
 }
     
