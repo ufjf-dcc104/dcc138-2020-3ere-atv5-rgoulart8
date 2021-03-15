@@ -62,6 +62,6 @@ export default class AssetManager {
     }
 
     desenhaImg(chave){
-        this.imagens.load(chave)
+        this.imagens.load(chave);
     }
 }

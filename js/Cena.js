@@ -38,7 +38,7 @@ export default class Cena {
     addSpriteAleatorio(t){
         t0 = t0 ?? t;
         dt = (t - t0)/1000;
-        sprite.cena = this;
+       
         if (dt = 4){
         this.adicionar(new Sprite({x: Math.random*x, y: Math.random*y, 
                                             collor: "red"}));

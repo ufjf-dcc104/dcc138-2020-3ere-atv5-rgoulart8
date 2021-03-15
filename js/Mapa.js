@@ -19,16 +19,19 @@ export default class Mapa {
             for (let c = 0; c < this.COLUNAS; c++) {
                switch (this.tiles[l][c]) {
                     case 1:
+                        //this.asset.desenhaImg("tijolo");
                         ctx.fillStyle = "grey";
                         ctx.lineWidth = 1;
                         ctx.strokeStyle = "black";
                         break;
                     case 2:
+                        //this.asset.desenhaImg("agua");
                         ctx.fillStyle = "lightgreen";
                         ctx.lineWidth = 1;
                         ctx.strokeStyle - "lightblue";
                         break;
                         default: 
+                        //this.asset.desenhaImg("grama");
                         ctx.fillStyle = "white";
                         ctx.lineWidth = 1;
                         ctx.strokeStyle = "lightblue";
