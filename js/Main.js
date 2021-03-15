@@ -39,6 +39,7 @@ cena1.adicionar(new Sprite({x: 460, y: 123, vy: -10, collor: "lightblue"}));
 cena1.adicionar(new Sprite({x: 400, y: 212, vy: 10, collor: "orange"}));
 cena1.adicionar(new Sprite({x: 420, y: 512, vy: -10, collor: "purple"}));
 
+
 cena1.iniciar();
 
 document.addEventListener("keydown", (e)=>{

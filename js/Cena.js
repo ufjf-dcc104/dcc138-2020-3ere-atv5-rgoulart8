@@ -33,6 +33,17 @@ export default class Cena {
         this.sprites.push(sprite);
     }
 
+    addSpriteAleatorio(t){
+        t0 = 0 ?? t;
+        dt = (t - t0)/1000;
+        if (dt = 4){
+        this.adicionar(this.sprites.desenhar({x: Math.random*x, y: Math.random*y, 
+                                            collor: "red"}));
+        }
+        t0 = t;
+        this.addSpriteAleatorio(t);
+    }
+
     passo(dt){
         if (this.assets.acabou()){
         for (const sprite of this.sprites) {

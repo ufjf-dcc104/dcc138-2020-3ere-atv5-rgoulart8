@@ -4,7 +4,7 @@ export default class Sprite{
         se move na tela 
     */ 
     constructor({x=100, y=100, w=32, h=32,
-        collor = "white", vx=0, vy=0}={}){
+        collor = "black", vx=0, vy=0}={}){
         this.x = x;
         this.y = y;
         this.vx = vx;
