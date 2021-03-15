@@ -1,3 +1,5 @@
+
+
 export default class Cena {
     /* É responsável por desenhar 
     elementos na tela em uma animação */
@@ -34,14 +36,17 @@ export default class Cena {
     }
 
     addSpriteAleatorio(t){
-        t0 = 0 ?? t;
+        t0 = t0 ?? t;
         dt = (t - t0)/1000;
+        sprite.cena = this;
         if (dt = 4){
-        this.adicionar(this.sprites.desenhar({x: Math.random*x, y: Math.random*y, 
+        this.adicionar(new Sprite({x: Math.random*x, y: Math.random*y, 
                                             collor: "red"}));
         }
-        t0 = t;
+        this.sprites.push(sprite);
+        
         this.addSpriteAleatorio(t);
+        t0 = t;
     }
 
     passo(dt){
