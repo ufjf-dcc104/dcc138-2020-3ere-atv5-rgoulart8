@@ -4,14 +4,14 @@ export default class Sprite{
         se move na tela 
     */ 
     constructor({x=100, y=100, w=32, h=32,
-        collor = "black", vx=0, vy=0}={}){
+        color = "black", vx=0, vy=0}={}){
         this.x = x;
         this.y = y;
         this.vx = vx;
         this.vy = vy;
         this.w = w;
         this.h = h;
-        this.collor = collor;
+        this.color = color;
         this.cena = null;
         this.assets = null;
         this.mx = 0;
@@ -21,7 +21,7 @@ export default class Sprite{
 
     desenhar(ctx)
         {
-            ctx.fillStyle = this.collor;
+            ctx.fillStyle = this.color;
             ctx.fillRect(this.x - this.w/2, this.y - this.h/2, this.w, this.h);
             ctx.strokeStyle = "black";
             ctx.strokeRect (

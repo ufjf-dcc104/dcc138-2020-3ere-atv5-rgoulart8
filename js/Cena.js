@@ -1,3 +1,4 @@
+import Sprite from "./Sprite.js";
 
 
 export default class Cena {
@@ -13,6 +14,7 @@ export default class Cena {
         this.idAnim = null;
         this.assets = assets;
         this.mapa = null;
+        this.criar = 2;
     }
     desenhar(){
         this.ctx.fillStyle = "lightgreen";
@@ -35,18 +37,16 @@ export default class Cena {
         this.sprites.push(sprite);
     }
 
-    addSpriteAleatorio(t){
-        t0 = t0 ?? t;
-        dt = (t - t0)/1000;
-       
-        if (dt = 4){
-        this.adicionar(new Sprite({x: Math.random*x, y: Math.random*y, 
-                                            collor: "red"}));
-        }
-        this.sprites.push(sprite);
+    addSpriteAleatorio(){
         
-        this.addSpriteAleatorio(t);
-        t0 = t;
+        let nmy = Math.floor(Math.random()*(this.mapa.tiles.length-2))+1;
+        let nmx = Math.floor(Math.random()*(this.mapa.tiles[0].length-2))+1;
+        while(this.mapa.tiles[nmy][nmx] != 0){
+            nmy = Math.floor(Math.random()*(this.mapa.tiles.length-2))+1;
+            nmx = Math.floor(Math.random()*(this.mapa.tiles[0].length-2))+1;
+        }
+        this.adicionar(new Sprite({x: nmx*this.mapa.SIZE+this.mapa.SIZE/2, 
+            y: nmy*this.mapa.SIZE+this.mapa.SIZE/2, color: "red"}));
     }
 
     passo(dt){
@@ -54,7 +54,14 @@ export default class Cena {
         for (const sprite of this.sprites) {
             sprite.passo(dt);
          
-        }}
+        }
+        this.criar-=dt;
+        if(this.criar<=0){
+            this.criar = 2;
+            this.addSpriteAleatorio();
+        }
+    
+    }
     }
     
     quadro (t) {
