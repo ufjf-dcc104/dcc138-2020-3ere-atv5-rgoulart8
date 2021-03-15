@@ -1,5 +1,5 @@
 export default class Mapa {
-    constructor(linhas = 20, colunas = 25, tamanho = 32){
+    constructor(linhas = 20, colunas = 25, tamanho = 32, assets){
         this.LINHAS = linhas;
         this.COLUNAS = colunas;
         this.SIZE = tamanho;
@@ -21,7 +21,7 @@ export default class Mapa {
                     case 1:
                         ctx.fillStyle = "grey";
                         ctx.lineWidth = 1;
-                        ctx.strokeStyle - "black";
+                        ctx.strokeStyle = "black";
                         break;
                     case 2:
                         ctx.fillStyle = "lightgreen";
@@ -29,9 +29,9 @@ export default class Mapa {
                         ctx.strokeStyle - "lightblue";
                         break;
                         default: 
-                        ctx.fillStyle = "black";
+                        ctx.fillStyle = "white";
                         ctx.lineWidth = 1;
-                        ctx.strokeStyle = "white";
+                        ctx.strokeStyle = "lightblue";
                         
                 }       
                 ctx.fillRect(c*this.SIZE, l*this.SIZE, this.SIZE, this.SIZE); 

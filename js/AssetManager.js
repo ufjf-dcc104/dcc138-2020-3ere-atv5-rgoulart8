@@ -20,7 +20,6 @@ export default class AssetManager {
             
     }
     
-
     img(chave){
         return this.imagens.get(chave)
     }
@@ -60,5 +59,9 @@ export default class AssetManager {
 
     playColidiu(chave){
         this.mixer?.play(this.audio(chave));
+    }
+
+    desenhaImg(chave){
+        this.imagens.load(chave)
     }
 }

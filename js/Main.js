@@ -22,7 +22,7 @@ canvas.width = 25*32;
 canvas.height = 20*32;
 const cena1 = new Cena(canvas, assets);
 
-const mapa1 = new Mapa(20, 25, 32);
+const mapa1 = new Mapa(20, 25, 32, assets);
 mapa1.carregaMapa(modeloMapa1)
 cena1.configuraMapa(mapa1);
 
@@ -38,8 +38,6 @@ cena1.adicionar(new Sprite({x: 315, y: 299, vy: +10, collor: "blue"}));
 cena1.adicionar(new Sprite({x: 460, y: 123, vy: -10, collor: "lightblue"}));
 cena1.adicionar(new Sprite({x: 400, y: 212, vy: 10, collor: "orange"}));
 cena1.adicionar(new Sprite({x: 420, y: 512, vy: -10, collor: "purple"}));
-
-
 
 cena1.iniciar();
 
