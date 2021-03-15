@@ -1,6 +1,3 @@
-import Sprite from "./Sprite.js";
-
-
 export default class Cena {
     /* É responsável por desenhar 
     elementos na tela em uma animação */
@@ -37,16 +34,8 @@ export default class Cena {
         this.sprites.push(sprite);
     }
 
-    addSpriteAleatorio(){
-        
-        let nmy = Math.floor(Math.random()*(this.mapa.tiles.length-2))+1;
-        let nmx = Math.floor(Math.random()*(this.mapa.tiles[0].length-2))+1;
-        while(this.mapa.tiles[nmy][nmx] != 0){
-            nmy = Math.floor(Math.random()*(this.mapa.tiles.length-2))+1;
-            nmx = Math.floor(Math.random()*(this.mapa.tiles[0].length-2))+1;
-        }
-        this.adicionar(new Sprite({x: nmx*this.mapa.SIZE+this.mapa.SIZE/2, 
-            y: nmy*this.mapa.SIZE+this.mapa.SIZE/2, color: "red"}));
+    quandoCriar(){
+           
     }
 
     passo(dt){
@@ -58,7 +47,7 @@ export default class Cena {
         this.criar-=dt;
         if(this.criar<=0){
             this.criar = 2;
-            this.addSpriteAleatorio();
+            this.quandoCriar();
         }
     
     }

@@ -39,6 +39,17 @@ cena1.adicionar(new Sprite({x: 460, y: 123, vy: -10, color: "lightblue"}));
 cena1.adicionar(new Sprite({x: 400, y: 212, vy: 10, color: "orange"}));
 cena1.adicionar(new Sprite({x: 420, y: 512, vy: -10, color: "purple"}));
 
+cena1.quandoCriar = function(){
+        let nmy = Math.floor(Math.random()*(this.mapa.tiles.length-2))+1;
+        let nmx = Math.floor(Math.random()*(this.mapa.tiles[0].length-2))+1;
+        while(this.mapa.tiles[nmy][nmx] != 0){
+            nmy = Math.floor(Math.random()*(this.mapa.tiles.length-2))+1;
+            nmx = Math.floor(Math.random()*(this.mapa.tiles[0].length-2))+1;
+        }
+        this.adicionar(new Sprite({x: nmx*this.mapa.SIZE+this.mapa.SIZE/2, 
+            y: nmy*this.mapa.SIZE+this.mapa.SIZE/2, color: "red"}));
+}
+
 
 cena1.iniciar();
 
