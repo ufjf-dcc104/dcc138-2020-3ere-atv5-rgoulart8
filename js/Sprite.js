@@ -24,12 +24,12 @@ export default class Sprite{
             ctx.fillStyle = this.color;
             ctx.fillRect(this.x - this.w/2, this.y - this.h/2, this.w, this.h);
             ctx.strokeStyle = "black";
-            ctx.strokeRect (
+            /*ctx.strokeRect (
                 this.mx * this.cena.mapa.SIZE,
                 this.my * this.cena.mapa.SIZE,
                 this.cena.mapa.SIZE,
                 this.cena.mapa.SIZE,
-                )
+                )*/
                  
     }
 
