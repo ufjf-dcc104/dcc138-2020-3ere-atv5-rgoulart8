@@ -19,26 +19,32 @@ export default class Mapa {
             for (let c = 0; c < this.COLUNAS; c++) {
                switch (this.tiles[l][c]) {
                     case 1:
-                        //this.asset.desenhaImg("tijolo");
                         ctx.fillStyle = "grey";
                         ctx.lineWidth = 1;
                         ctx.strokeStyle = "black";
+                        ctx.fillRect(c*this.SIZE, l*this.SIZE, this.SIZE, this.SIZE); 
+                        ctx.drawImage(this.cena.assets.img("tijolo"), c*this.SIZE, l*this.SIZE, this.SIZE, this.SIZE); 
+                        //ctx.strokeRect(c*this.SIZE, l*this.SIZE, this.SIZE, this.SIZE);
                         break;
                     case 2:
-                        //this.asset.desenhaImg("agua");
                         ctx.fillStyle = "lightgreen";
                         ctx.lineWidth = 1;
-                        ctx.strokeStyle - "lightblue";
+                        ctx.strokeStyle = "black";
+                        ctx.fillRect(c*this.SIZE, l*this.SIZE, this.SIZE, this.SIZE); 
+                        ctx.drawImage(this.cena.assets.img("agua"), c*this.SIZE, l*this.SIZE, this.SIZE, this.SIZE); 
+                        //ctx.strokeRect(c*this.SIZE, l*this.SIZE, this.SIZE, this.SIZE); 
                         break;
                         default: 
                         //this.asset.desenhaImg("grama");
                         ctx.fillStyle = "white";
                         ctx.lineWidth = 1;
-                        ctx.strokeStyle = "lightblue";
+                        ctx.strokeStyle = "black";
+                        ctx.fillRect(c*this.SIZE, l*this.SIZE, this.SIZE, this.SIZE); 
+                        ctx.drawImage(this.cena.assets.img("grama"), c*this.SIZE, l*this.SIZE, this.SIZE, this.SIZE); 
+                        //ctx.strokeRect(c*this.SIZE, l*this.SIZE, this.SIZE, this.SIZE); 
                         
                 }       
-                ctx.fillRect(c*this.SIZE, l*this.SIZE, this.SIZE, this.SIZE); 
-                ctx.strokeRect(c*this.SIZE, l*this.SIZE, this.SIZE, this.SIZE);   
+                  
                 
             }       
         }

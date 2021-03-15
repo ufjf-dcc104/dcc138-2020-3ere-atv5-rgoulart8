@@ -96,7 +96,7 @@ export default class Cena {
             this.aRemover.push(b);
         }
         this.assets.playColidiu("explosao");
-        console.log(this.aRemover);
+       
     }
 
     removerSprites(){
