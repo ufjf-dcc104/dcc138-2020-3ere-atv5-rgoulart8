@@ -4,7 +4,9 @@ import Mapa from "./Mapa.js";
 import Mixer from "./Mixer.js";
 import Sprite from "./Sprite.js";
 import modeloMapa1 from "../maps/mapa1.js";
+import InputManager from "./InputManager.js";
 
+const input = new InputManager();
 const mixer = new Mixer(10);
 const assets = new AssetManager(mixer);
 
@@ -20,13 +22,32 @@ assets.carregaAudio ("explosao", "assets/boom.wav");
 const canvas = document.querySelector("canvas");
 canvas.width = 25*32;
 canvas.height = 20*32;
+
+input.configurarTeclado({
+    "ArrowLeft": "MOVE_ESQUERDA",
+    "ArrowRight": "MOVE_DIREITA",
+    "ArrowUp": "MOVE_CIMA",
+    "ArrowDown": "MOVE_BAIXO",
+    });
+
 const cena1 = new Cena(canvas, assets);
 
 const mapa1 = new Mapa(20, 25, 32, assets);
 mapa1.carregaMapa(modeloMapa1)
 cena1.configuraMapa(mapa1);
 
-const pc = new Sprite({x: 50, vx:10});
+const pc = new Sprite({x: 50, y: 120});
+pc.controlar = function(dt){
+    if(input.comandos.get("MOVE_ESQUERDA")){
+        this.vx = -50;
+    }
+    else if(input.comandos.get("MOVE_DIREITA")){
+        this.vx = +50;
+    }
+    else{
+        this.vx = 0;
+    }
+}
 const en1 = new Sprite({x:200, vx: -10, color:"red"});
     
 cena1.adicionar(pc);

@@ -33,13 +33,24 @@ export default class Sprite{
                  
     }
 
-    passo(dt){
+    controlar(dt){
+
+    }
+
+    mover(dt){
+        
         this.x = this.x + this.vx*dt
         this.y = this.y + this.vy*dt
         this.mx = Math.floor(this.x/this.cena.mapa.SIZE);
         this.my = Math.floor(this.y/this.cena.mapa.SIZE);
-        this.aplicaRestricoes(dt);
         
+        
+    }
+
+    passo(dt){
+        this.controlar(dt);
+        this.mover(dt);
+        this.aplicaRestricoes(dt);
     }
 
     colidiuCom(outro){
