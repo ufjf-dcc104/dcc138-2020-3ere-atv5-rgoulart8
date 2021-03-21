@@ -3,8 +3,16 @@ export default class Sprite{
         É responsável por modelar algo que
         se move na tela 
     */ 
-    constructor({x=100, y=100, w=32, h=32,
-        color = "black", vx=0, vy=0}={}){
+    constructor({
+        x = 100,
+        y = 100,
+        w = 32,
+        h = 32,
+        color = "black",
+        vx = 0,
+        vy = 0,
+        controlar = ()=>{}
+    }={}){
         this.x = x;
         this.y = y;
         this.vx = vx;
@@ -16,6 +24,7 @@ export default class Sprite{
         this.assets = null;
         this.mx = 0;
         this.my = 0;
+        this.controlar = controlar;
         
     }
 

@@ -57,19 +57,24 @@ pc.controlar = function(dt){
         this.vy = 0;
     }
 }
-const en1 = new Sprite({x:200, vx: -10, color:"red"});
-    
 cena1.adicionar(pc);
-cena1.adicionar(en1);
-cena1.adicionar(new Sprite({x: 115, y: 70, vy: 10, color: "yellow"}));
-cena1.adicionar(new Sprite({x: 650, y: 70, vx: -10, color: "pink"}));
-cena1.adicionar(new Sprite({x: 150, y: 180, vy: -10, color: "green"}));
-cena1.adicionar(new Sprite({x: 315, y: 299, vy: +10, color: "blue"}));
-cena1.adicionar(new Sprite({x: 460, y: 123, vy: -10, color: "lightblue"}));
-cena1.adicionar(new Sprite({x: 400, y: 212, vy: 10, color: "orange"}));
-cena1.adicionar(new Sprite({x: 420, y: 512, vy: -10, color: "purple"}));
 
-cena1.quandoCriar = function(){
+function perseguePC(dt){
+    this.vx = 25*Math.sign(pc.x - this.x);
+    this.vy = 25*Math.sign(pc.y - this.y);
+
+}
+const en1 = new Sprite({x:360, color:"red", controlar: perseguePC});
+en1.controlar = perseguePC;
+    
+cena1.adicionar(en1);
+cena1.adicionar(new Sprite({x: 115, y: 70, vy: 10, color: "yellow", controlar: perseguePC}));
+cena1.adicionar(new Sprite({x: 650, y: 70, vx: -10, color: "pink", controlar: perseguePC}));
+cena1.adicionar(new Sprite({x: 150, y: 180, vy: -10, color: "green", controlar: perseguePC}));
+cena1.adicionar(new Sprite({x: 315, y: 299, vy: +10, color: "blue",controlar: perseguePC}));
+
+
+/*cena1.quandoCriar = function(){
         let nmy = Math.floor(Math.random()*(this.mapa.tiles.length-2))+1;
         let nmx = Math.floor(Math.random()*(this.mapa.tiles[0].length-2))+1;
         let nvx = Math.sin(nmx)*Math.random()*50;
@@ -82,7 +87,7 @@ cena1.quandoCriar = function(){
                 y: nmy*this.mapa.SIZE+this.mapa.SIZE/2, vx: nvx, color: "red"}));
                         
             }
-          
+          */
 
 
 cena1.iniciar();
