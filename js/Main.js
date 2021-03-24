@@ -5,6 +5,7 @@ import Mixer from "./Mixer.js";
 import Sprite from "./Sprite.js";
 import modeloMapa1 from "../maps/mapa1.js";
 import InputManager from "./InputManager.js";
+import Game from "./Game.js";
 
 const input = new InputManager();
 const mixer = new Mixer(10);
@@ -30,7 +31,9 @@ input.configurarTeclado({
     "ArrowDown": "MOVE_BAIXO",
     });
 
+const game = new Game(canvas, assets, input);
 const cena1 = new Cena(canvas, assets);
+game.adicionarCena("jogo",cena1);
 
 const mapa1 = new Mapa(20, 25, 32, assets);
 mapa1.carregaMapa(modeloMapa1)
@@ -68,26 +71,25 @@ const en1 = new Sprite({x:360, color:"red", controlar: perseguePC});
 en1.controlar = perseguePC;
     
 cena1.adicionar(en1);
-cena1.adicionar(new Sprite({x: 115, y: 70, vy: 10, color: "yellow", controlar: perseguePC}));
+/*cena1.adicionar(new Sprite({x: 115, y: 70, vy: 10, color: "yellow", controlar: perseguePC}));
 cena1.adicionar(new Sprite({x: 650, y: 70, vx: -10, color: "pink", controlar: perseguePC}));
 cena1.adicionar(new Sprite({x: 150, y: 180, vy: -10, color: "green", controlar: perseguePC}));
-cena1.adicionar(new Sprite({x: 315, y: 299, vy: +10, color: "blue",controlar: perseguePC}));
+cena1.adicionar(new Sprite({x: 315, y: 299, vy: +10, color: "blue",controlar: perseguePC}));*/
 
 
-/*cena1.quandoCriar = function(){
+cena1.quandoCriar = function(){
         let nmy = Math.floor(Math.random()*(this.mapa.tiles.length-2))+1;
         let nmx = Math.floor(Math.random()*(this.mapa.tiles[0].length-2))+1;
-        let nvx = Math.sin(nmx)*Math.random()*50;
-        let nvy = nvx;
+        
         while(this.mapa.tiles[nmy][nmx] != 0){
             nmy = Math.floor(Math.random()*(this.mapa.tiles.length-2))+1;
             nmx = Math.floor(Math.random()*(this.mapa.tiles[0].length-2))+1;
         }
             this.adicionar(new Sprite({x: nmx*this.mapa.SIZE+this.mapa.SIZE/2, 
-                y: nmy*this.mapa.SIZE+this.mapa.SIZE/2, vx: nvx, color: "red"}));
+                y: nmy*this.mapa.SIZE+this.mapa.SIZE/2, controlar: perseguePC, color: "red"}));
                         
             }
-          */
+          
 
 
 cena1.iniciar();
