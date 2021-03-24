@@ -92,15 +92,15 @@ cena1.quandoCriar = function(){
           
 
 
-cena1.iniciar();
+game.iniciar();
 
 document.addEventListener("keydown", (e)=>{
     switch (e.key) {
     case "s":
-        cena1.iniciar();
+        game.iniciar();
         break;
     case "S":
-        cena1.parar();
+        game.parar();
         break;
     case "c":
         assets.play("moeda");
