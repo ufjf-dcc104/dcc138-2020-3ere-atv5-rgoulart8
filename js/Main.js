@@ -31,14 +31,15 @@ input.configurarTeclado({
     "ArrowRight": "MOVE_DIREITA",
     "ArrowUp": "MOVE_CIMA",
     "ArrowDown": "MOVE_BAIXO",
+    " ": "PROXIMA_CENA",
     });
 
 const game = new Game(canvas, assets, input);
 
 const cena0 = new CenaCarregando(canvas, assets);
 const cena1 = new CenaJogo(canvas, assets);
-game.adicionarCena("carregando",cena0);
-game.adicionarCena("jogo",cena1);
+game.adicionarCena("carregando", cena0);
+game.adicionarCena("jogo", cena1);
 
 const mapa1 = new Mapa(20, 25, 32, assets);
 mapa1.carregaMapa(modeloMapa1)
