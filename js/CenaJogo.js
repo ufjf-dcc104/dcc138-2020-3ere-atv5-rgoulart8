@@ -69,7 +69,7 @@ export default class CenaJogo extends Cena {
 
     this.adicionar(en1);
     this.adicionar(
-      new Sprite({ x: 150, y: 200, color: "yellow", tags: ["muda"] })
+      new Sprite({ x: 550, y: 580, color: "yellow", tags: ["muda"] })
     );
     /*cena1.adicionar(new Sprite({x: 650, y: 70, vx: -10, color: "pink", controlar: perseguePC}));
         cena1.adicionar(new Sprite({x: 150, y: 180, vy: -10, color: "green", controlar: perseguePC}));
