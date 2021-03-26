@@ -5,10 +5,10 @@ import modeloMapa1 from "../maps/mapa2.js";
 
 export default class CenaMoedas extends Cena {
   quandoColidir(a, b) {
-    let contador = 0;
+    
     if (a.tags.has("pc") && b.tags.has("moeda")) {
       this.assets.play("moeda");
-      contador++;
+      this.game.moedas++;
       if (!this.aRemover.includes(b)) {
         this.aRemover.push(b);
       }
