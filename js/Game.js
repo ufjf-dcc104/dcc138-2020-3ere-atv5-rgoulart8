@@ -7,6 +7,7 @@ export default class Game {
         this.cenas = new Map();
         this.cena = null;
         this.game = null;
+        this.moedas = 0;
     }
 
     adicionarCena(chave, cena){
