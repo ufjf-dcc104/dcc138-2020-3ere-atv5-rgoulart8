@@ -20,6 +20,7 @@ assets.carregaImagem ("grama", "assets/grama.png");
 assets.carregaImagem ("tijolo", "assets/brick.png");
 assets.carregaImagem ("agua", "assets/water.png");
 assets.carregaImagem ("moeda", "assets/moeda.png");
+assets.carregaImagem ("enemy", "assets/enemy.png");
 assets.carregaAudio ("moeda", "assets/coin.wav");
 assets.carregaAudio ("explosao", "assets/boom.wav");
 

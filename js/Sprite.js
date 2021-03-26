@@ -51,6 +51,15 @@ export default class Sprite {
         this.h
       );
     }
+    if (this.tags.has("enemy")) {
+        ctx.drawImage(
+          this.cena.assets.img("enemy"),
+          this.x - this.w / 2,
+          this.y - this.h / 2,
+          this.w,
+          this.h
+        );
+      }
   }
 
   controlar(dt) {}
