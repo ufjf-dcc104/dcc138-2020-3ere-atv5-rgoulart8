@@ -23,6 +23,7 @@ assets.carregaImagem ("moeda", "assets/moeda.png");
 assets.carregaImagem ("enemy", "assets/enemy.png");
 assets.carregaImagem ("enemy2", "assets/enemy2.png");
 assets.carregaImagem ("arrow", "assets/arrow.png");
+assets.carregaImagem ("arrow2", "assets/arrow2.png");
 assets.carregaAudio ("moeda", "assets/coin.wav");
 assets.carregaAudio ("explosao", "assets/boom.wav");
 
