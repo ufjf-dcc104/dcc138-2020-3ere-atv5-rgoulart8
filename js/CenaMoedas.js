@@ -12,9 +12,14 @@ export default class CenaMoedas extends Cena {
       if (!this.aRemover.includes(b)) {
         this.aRemover.push(b);
       }
+      if (this.game.moedas == 10){
+        this.rodando = false;
+        this.game.selecionaCena("vitoria");
+      }
     }
     if (a.tags.has("pc") && b.tags.has("muda")) {
       this.rodando = false;
+      this.game.moedas == 0;
       this.game.selecionaCena("jogo");
     }
   }
