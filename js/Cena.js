@@ -20,8 +20,7 @@ export default class Cena {
             sprite.desenhar(this.ctx);
             sprite.aplicaRestricoes();
         }}
-        this.ctx.fillStyle = "yellow"
-        this.ctx.fillText(this.assets?.progresso(), 10, 20);
+        
     }
 
     adicionar(sprite){
