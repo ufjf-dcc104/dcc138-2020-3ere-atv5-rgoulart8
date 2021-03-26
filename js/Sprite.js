@@ -11,7 +11,8 @@ export default class Sprite{
         color = "black",
         vx = 0,
         vy = 0,
-        controlar = ()=>{}
+        controlar = ()=>{},
+        tags = []
     }={}){
         this.x = x;
         this.y = y;
@@ -25,6 +26,14 @@ export default class Sprite{
         this.mx = 0;
         this.my = 0;
         this.controlar = controlar;
+        this.tags = new Set();
+        tags.forEach((tag)=>{
+            
+                this.tags.add(tag);
+
+        });
+            
+        
         
     }
 
