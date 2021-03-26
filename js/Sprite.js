@@ -63,25 +63,49 @@ export default class Sprite {
       }
     }
     if (this.tags.has("muda")) {
-      ctx.drawImage(
-        this.cena.assets.img("arrow"),
-        this.x - this.w / 2,
-        this.y - this.h / 2,
-        this.w,
-        this.h
-      );
+        if (this.vx > 0) {
+            ctx.drawImage(
+              this.cena.assets.img("arrow"),
+              this.x - this.w / 2,
+              this.y - this.h / 2,
+              this.w,
+              this.h
+            );
+          }
+          if (this.vx <= 0) {
+            ctx.drawImage(
+              this.cena.assets.img("arrow2"),
+              this.x - this.w / 2,
+              this.y - this.h / 2,
+              this.w,
+              this.h
+            );
+          }
     }
 
     if (this.tags.has("pc")) {
+        
       ctx.fillStyle = this.color;
       ctx.fillRect(this.x - this.w / 2, this.y - this.h / 2, this.w, this.h);
-      /*ctx.strokeStyle = "black";
-        ctx.strokeRect (
-                    this.mx * this.cena.mapa.SIZE,
-                    this.my * this.cena.mapa.SIZE,
-                    this.cena.mapa.SIZE,
-                    this.cena.mapa.SIZE,
-                    )*/
+      /* if (this.vx > 0) {
+        ctx.drawImage(
+          this.cena.assets.img("arrow"),
+          this.x - this.w / 2,
+          this.y - this.h / 2,
+          this.w,
+          this.h
+        );
+      }
+      if (this.vx <= 0) {
+        ctx.drawImage(
+          this.cena.assets.img("arrow2"),
+          this.x - this.w / 2,
+          this.y - this.h / 2,
+          this.w,
+          this.h
+        );
+      }
+      */
     }
   }
 
