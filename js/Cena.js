@@ -6,6 +6,7 @@ export default class Cena {
         this.ctx = canvas.getContext("2d");
         this.assets = assets;
         this.preparar();
+        this.criar = 4;
     }
     desenhar(){
         this.ctx.fillStyle = "lightgreen";
