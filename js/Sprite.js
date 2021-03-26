@@ -43,13 +43,24 @@ export default class Sprite {
       );
     }
     if (this.tags.has("enemy")) {
-      ctx.drawImage(
-        this.cena.assets.img("enemy"),
-        this.x - this.w / 2,
-        this.y - this.h / 2,
-        this.w,
-        this.h
-      );
+      if (this.vx <= 0) {
+        ctx.drawImage(
+          this.cena.assets.img("enemy"),
+          this.x - this.w / 2,
+          this.y - this.h / 2,
+          this.w,
+          this.h
+        );
+      }
+      if (this.vx > 0) {
+        ctx.drawImage(
+          this.cena.assets.img("enemy2"),
+          this.x - this.w / 2,
+          this.y - this.h / 2,
+          this.w,
+          this.h
+        );
+      }
     }
     if (this.tags.has("muda")) {
       ctx.drawImage(
