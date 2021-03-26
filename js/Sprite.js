@@ -63,7 +63,7 @@ export default class Sprite {
       }
     }
     if (this.tags.has("muda")) {
-        if (this.vx > 0) {
+        if (this.vx >= 0) {
             ctx.drawImage(
               this.cena.assets.img("arrow"),
               this.x - this.w / 2,
@@ -72,7 +72,7 @@ export default class Sprite {
               this.h
             );
           }
-          if (this.vx <= 0) {
+          if (this.vx < 0) {
             ctx.drawImage(
               this.cena.assets.img("arrow2"),
               this.x - this.w / 2,
